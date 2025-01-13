@@ -1,32 +1,30 @@
-#include <stdio.h>
-char	*ft_strcat(char *dest, char *src)
-{
-	char *dest_ptr = dest;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbudak <mbudak@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/24 01:26:54 by mbudak            #+#    #+#             */
+/*   Updated: 2024/07/24 01:26:56 by mbudak           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-	while(*dest_ptr != '\0')
+char	*ft_strcat(char	*dest, char	*src)
+{
+	char	*dest_ptr;
+
+	dest_ptr = dest;
+	while (*dest_ptr != '\0')
 	{
 		dest_ptr++;
 	}
-
-	while(*src != '\0')
+	while (*src != '\0')
 	{
 		*dest_ptr = *src;
 		dest_ptr++;
 		src++;
 	}
-
 	*dest_ptr = '\0';
-	return dest;
-}
-
-int main() 
-{
-    char dest[50] = "Hello, ";
-    char src[] = "world!";
-
-    ft_strcat(dest, src);
-
-    printf("%s", dest);
-
-    return 0;
+	return (dest);
 }

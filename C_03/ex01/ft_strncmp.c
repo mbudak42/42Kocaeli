@@ -1,19 +1,22 @@
-#include <stdio.h>
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbudak <mbudak@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/24 01:26:43 by mbudak            #+#    #+#             */
+/*   Updated: 2024/07/24 01:26:45 by mbudak           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int	ft_strncmp(char	*s1, char	*s2, unsigned int n)
 {
-	while((*s1 != '\0') && (*s1 == *s2) && (n>1))
+	while ((*s1 != '\0') && (*s1 == *s2) && (n > 1))
 	{
 		s1++;
 		s2++;
 		n--;
 	}
-	return *s1 - *s2;
-}
-
-int main(void)
-{
-	char s1[] = "hello";
-	char s2[] = "helloword";
-	int n = 5;
-	printf("%d", ft_strncmp(s1,s2,n));
+	return (*s1 - *s2);
 }

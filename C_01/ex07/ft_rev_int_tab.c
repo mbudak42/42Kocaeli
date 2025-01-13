@@ -1,40 +1,26 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbudak <mbudak@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/22 15:48:52 by mbudak            #+#    #+#             */
+/*   Updated: 2024/07/22 15:50:50 by mbudak           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void ft_rev_int_tab(int *array, int size) 
+void	ft_rev_int_tab(int *tab, int size)
 {
-    int i = 0;
-    int temp;
-    while (i<size-1) 
-	{
-		if(array[i] <= array[i+1])
-		{
-			i++;
-		}
-		else
-		{
-			temp = array[i];
-        	array[i] = array[i+1];
-        	array[i+1] = temp;
-        	ft_rev_int_tab(array,size);
-		}
-        
-    }
-}
+	int	i;
+	int	temp;
 
-int main()
-{
-	int array[] = {1,6,4,7,3,9,8,2,5,10};
-	int size = 0;
-	while(array[size]!='\0')
+	i = 0;
+	while (i < size / 2)
 	{
-		size++;
+		temp = tab[i];
+		tab[i] = tab[size - 1 - i];
+		tab[size - 1 - i] = temp;
+		i++;
 	}
-
-	ft_rev_int_tab(array,size);
-
-	for (int i = 0; i < size; i++)
-	{
-        printf("%d ", array[i]);
-    }
-    printf("\n");
 }

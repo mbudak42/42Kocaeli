@@ -1,16 +1,21 @@
-#include <stdio.h>
-int	ft_strcmp(char *s1,char *s2)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbudak <mbudak@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/24 01:26:35 by mbudak            #+#    #+#             */
+/*   Updated: 2024/07/24 01:26:37 by mbudak           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int	ft_strcmp(char	*s1, char	*s2)
 {
-	while((*s1 != '\0') && (*s1==*s2))
+	while ((*s1 != '\0') && (*s1 == *s2))
 	{
 		s1++;
 		s2++;
 	}
-	return *s1 - *s2;
-}
-int main(void)
-{
-	char s1[] = "hello";
-	char s2[] = "helloword";
-	printf("%d", ft_strcmp(s1,s2));
+	return (*s1 - *s2);
 }
